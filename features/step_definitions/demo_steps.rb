@@ -1,31 +1,33 @@
 Given(/^I am on the demo site$/) do
-  pending
+  visit HomePage
 end
 
 When(/^I login$/) do
-  pending
+  on(HomePage).perform_login
 end
 
 Then(/^I should see the heading "([^"]*)"$/) do |expected_text|
-  pending
+  @current_page.wait_until do
+    @current_page.text.include? expected_text
+  end
 end
 
 Given(/^I am on The Internet site$/) do
-  pending
+  visit TheInternet
 end
 
 When(/^I invoke the second dynamic loading example$/) do
-  pending
+  navigate_all(:using => :dynamic_loading)
 end
 
 Then(/^I should see the "([^"]*)" prompt$/) do |expected_prompt|
-  pending
+  on(DynamicLoadingExample2).should have_prompt expected_prompt
 end
 
 Then(/^I select the Back To menu option$/) do
-  pending
+  navigate_all
 end
 
 Then(/^I should be on the JQueryUI page$/) do
-  pending
+  @current_page.text.should include 'JQuery UI is many things'
 end

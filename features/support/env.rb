@@ -10,6 +10,9 @@ World(PageObject::PageFactory)
 
 PageObject::PageFactory.routes = {
     default: [[TheInternet, :select_link, 'JQuery UI Menus'],
-              [JQueryUiMenu, :back_to_jquery]]
+              [JQueryUiMenu, :back_to_jquery]],
+    dynamic_loading: [[TheInternet, :select_link, 'Dynamic Loading'],
+                      [DynamicLoadingExamples, :example2],
+                      [DynamicLoadingExample2, :start]]
 }
 

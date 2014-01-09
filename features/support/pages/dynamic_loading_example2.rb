@@ -3,4 +3,10 @@ class DynamicLoadingExample2
 
   button(:start, text: 'Start')
 
+  def has_prompt?(prompt)
+    wait_until do
+      text.include? prompt
+    end
+  end
+
 end
